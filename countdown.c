@@ -1,4 +1,3 @@
-
 /* countdown.c */
 
 #include <stdio.h>
@@ -11,11 +10,23 @@ int main()
 	fflush(stdout);
 	scanf("%d", &countdown);
 	
+	int skipNumber;
+	printf("Write a number to skip : \n");
+        fflush(stdout);
+        scanf("%d", &skipNumber);
+
 	printf("Countdown : \n");
+	printf("%d\n", countdown);
 	while(1){
-		printf("%d\n", countdown);
+		
+		
+		countdown--;		
+
+		if(countdown == skipNumber)
+			continue;
+				
 		sleep(1);
-		countdown--;
+		printf("%d\n", countdown);		
 		
 		if(countdown < 1 )
 			break;
